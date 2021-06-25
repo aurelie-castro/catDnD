@@ -261,7 +261,10 @@ else{
 
     });
     
-    
+//    document.querySelector('body').addEventListener('click', function(){
+//       console.log('was clicked!!!!!!');
+//        that.hasBeenClicked = true;
+//    });
 
 }
 
@@ -276,12 +279,14 @@ function update() {
     
         if (hasBeenClicked === true){
         soundButton.alpha = 1;
-        }else{
-            correctSound.stop();
-            holdSound.stop();
-            finishSound.stop();
-            wrongSound.stop();
         }
+    
+//    else{
+//            correctSound.stop();
+//            holdSound.stop();
+//            finishSound.stop();
+//            wrongSound.stop();
+//        }
 
 }
 
@@ -293,5 +298,6 @@ function onClick(){
 
 function enableMusic(){
     hasBeenClicked = true;
+    HTMLAudioElement.muted = false;
 }
 
