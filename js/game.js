@@ -66,13 +66,13 @@ function preload() {
     this.load.audio('hold', './assets/hold.wav');
     this.load.audio('wrong', './assets/wrong.wav');
     this.load.audio('correct', './assets/correct.wav');
-    this.load.audio('finish', './assets/finish.wav');
+    this.load.audio('finish', './assets/congratulations.wav');
     
     //---sound button----
     this.load.image('soundBtn', './assets/volume-up.png');
     
     //---star at the end---
-    this.load.image('star', './assets/blue-star.png');
+    this.load.image('star', './assets/b-badge.png');
     
     //---background pattern---
     this.load.image('gameBg', './assets/feuilledroite-01-01.png');
@@ -85,7 +85,7 @@ function create() {
     gameBg.alpha = 0.8;
     
     var image = this.add.image(200, 250, 'background');
-    image.alpha = 0.3;
+    image.alpha = 0.4;
 //    image.setScale(0.45);
     
     //---star---
@@ -159,7 +159,7 @@ function create() {
     zone2.setName('body');
     
     //  A drop zone
-    var zone3 = this.add.zone(115, 280, 70, 60).setRectangleDropZone(70, 60);
+    var zone3 = this.add.zone(115, 278, 70, 60).setRectangleDropZone(70, 60);
     zone3.setName('handL');
     
     
@@ -172,10 +172,12 @@ function create() {
     zone5.setName('legL');
     
      //  A drop zone
-    var zone6 = this.add.zone(292, 335, 60, 90).setRectangleDropZone(60, 90);
+    var zone6 = this.add.zone(294, 335, 60, 90).setRectangleDropZone(60, 90);
     zone6.setName('tail');
     
-//      var graphics = this.add.graphics();
+    //----useful for placing the zones and debugging-----
+    
+//    var graphics = this.add.graphics();
 //    graphics.lineStyle(2, 0xffff00);
 //    graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
 //    
@@ -273,12 +275,33 @@ function update() {
     if(successfulDropoff === 6){
          starScale += 0.001;
         star.setScale(starScale);
-        if (starScale > 0.2){
-            starScale = 0.2;
-        } }
+        if (starScale > 0.3){
+            starScale = 0.3;
+//            star.rotation = 0.01;
+        }
+//        star.rotation += 0.01;
+        
+        
+//        if(star.rotation > 1){
+//            star.rotation = 0.01;
+//        }
+//    if (star.angle === 1){
+//        console.log("360");
+//        star.rotation = 0;
+//    }
+        
+//        this.tweens.add({
+//            targets: star,
+//            duration: 2000,
+//            angle: 360,
+//            ease: 'Quad.easeInOut',
+//            repeat: -1,
+//            yoyo: true
+//        });
+    }
     
         if (hasBeenClicked === true){
-        soundButton.alpha = 1;
+            soundButton.alpha = 1;
         }
     
 //    else{
@@ -288,6 +311,8 @@ function update() {
 //            wrongSound.stop();
 //        }
 
+
+//    console.log(star.rotation);
 }
 
 function onClick(){
@@ -298,6 +323,5 @@ function onClick(){
 
 function enableMusic(){
     hasBeenClicked = true;
-    HTMLAudioElement.muted = false;
 }
 
