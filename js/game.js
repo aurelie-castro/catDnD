@@ -11,7 +11,7 @@ let config = {
         create: create,
         update: update
     },
-    backgroundColor: '#ADD8E6',
+    backgroundColor: '#87CBF9',
     audio: {
         disableWebAudio: true
     },
