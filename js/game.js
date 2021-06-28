@@ -60,7 +60,7 @@ function preload() {
     this.load.image('legR', './assets/clegR-01.png');
     
      //---arrow next---
-    this.load.image('nextArrow', './assets/blue-arrow.png');
+    this.load.image('nextArrow', './assets/b-refresh.png');
     
     //---audio files---
     this.load.audio('hold', './assets/hold.wav');
@@ -114,7 +114,7 @@ function create() {
     
     //---next arrow----
     nextArrow = this.add.image(300, 550, 'nextArrow');
-    nextArrow.setScale(0.7);
+    nextArrow.setScale(0.15);
     nextArrow.setVisible(false);
     
     //----les membres-----
