@@ -317,7 +317,7 @@ function update() {
 
 function onClick(){
 //    window.open("https://www.google.com", "_blank");
-    window.location.replace("http://www.w3schools.com");
+    window.location.replace("https://www.games.caramel.be/pinocchio/index.html");
 
 }
 
