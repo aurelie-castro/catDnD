@@ -86,7 +86,6 @@ function create() {
     
     var image = this.add.image(200, 250, 'background');
     image.alpha = 0.4;
-//    image.setScale(0.45);
     
     //---star---
     starScale = 0.1;
@@ -120,34 +119,27 @@ function create() {
     //----les membres-----
     var head = this.add.image(258, 525, 'head', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(head);
-//    head.setScale(2);
     head.setName('head');
-//    head.setScale(0.45);
     
     var body = this.add.image(77, 550, 'body', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(body);
     body.setName('body');
-//    body.setScale(0.45);
     
     var handL = this.add.image(250, 50, 'handL', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(handL);
     handL.setName('handL');
-//    handL.setScale(0.45);
     
     var tail = this.add.image(70, 408, 'tail', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(tail);
     tail.setName('tail');
-//    hips.setScale(0.45);
     
     var legL = this.add.image(50, 212, 'legL', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(legL);
     legL.setName('legL');
-//    legL.setScale(0.45);
     
     var legR = this.add.image(50, 150, 'legR', Phaser.Math.RND.pick(frames)).setInteractive();
     this.input.setDraggable(legR);
     legR.setName('legR');
-//    legR.setScale(0.45);
     
     //-----les drop zones----
     //  A drop zone
@@ -174,22 +166,6 @@ function create() {
      //  A drop zone
     var zone6 = this.add.zone(294, 335, 60, 90).setRectangleDropZone(60, 90);
     zone6.setName('tail');
-    
-    //----useful for placing the zones and debugging-----
-    
-//    var graphics = this.add.graphics();
-//    graphics.lineStyle(2, 0xffff00);
-//    graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
-//    
-//    graphics.strokeRect(zone2.x - zone2.input.hitArea.width / 2, zone2.y - zone2.input.hitArea.height / 2, zone2.input.hitArea.width, zone2.input.hitArea.height);
-//    
-//    graphics.strokeRect(zone3.x - zone3.input.hitArea.width / 2, zone3.y - zone3.input.hitArea.height / 2, zone3.input.hitArea.width, zone3.input.hitArea.height);
-//    
-//    graphics.strokeRect(zone4.x - zone4.input.hitArea.width / 2, zone4.y - zone4.input.hitArea.height / 2, zone4.input.hitArea.width, zone4.input.hitArea.height);
-//    
-//    graphics.strokeRect(zone5.x - zone5.input.hitArea.width / 2, zone5.y - zone5.input.hitArea.height / 2, zone5.input.hitArea.width, zone5.input.hitArea.height);
-//    
-//    graphics.strokeRect(zone6.x - zone6.input.hitArea.width / 2, zone6.y - zone6.input.hitArea.height / 2, zone6.input.hitArea.width, zone6.input.hitArea.height);
 
  
     //---drag and drop mechanics---
@@ -197,7 +173,6 @@ function create() {
 
         this.children.bringToTop(gameObject);
         holdSound.play();
-//        hasBeenClicked = true;
 
     }, this);
 
@@ -223,17 +198,13 @@ function create() {
             gameObject.y = dropZone.y;
 
             gameObject.input.enabled = false;
-//            console.log(dropZone.name == gameObject.name);
-//            console.log('successful dropoff of ' + gameObject.name + ' in ' + dropZone.name);
             
             successfulDropoff++;
-//            console.log(successfulDropoff);
             correctSound.play();
         }
 else{
             gameObject.x = gameObject.input.dragStartX;
             gameObject.y = gameObject.input.dragStartY;
-//            console.log('failed dropoff of ' + gameObject.name + ' in ' + dropZone.name);
     
             wrongSound.play();
         }
@@ -263,10 +234,6 @@ else{
 
     });
     
-//    document.querySelector('body').addEventListener('click', function(){
-//       console.log('was clicked!!!!!!');
-//        that.hasBeenClicked = true;
-//    });
 
 }
 
@@ -277,46 +244,17 @@ function update() {
         star.setScale(starScale);
         if (starScale > 0.3){
             starScale = 0.3;
-//            star.rotation = 0.01;
         }
-//        star.rotation += 0.01;
-        
-        
-//        if(star.rotation > 1){
-//            star.rotation = 0.01;
-//        }
-//    if (star.angle === 1){
-//        console.log("360");
-//        star.rotation = 0;
-//    }
-        
-//        this.tweens.add({
-//            targets: star,
-//            duration: 2000,
-//            angle: 360,
-//            ease: 'Quad.easeInOut',
-//            repeat: -1,
-//            yoyo: true
-//        });
+
     }
     
         if (hasBeenClicked === true){
             soundButton.alpha = 1;
         }
     
-//    else{
-//            correctSound.stop();
-//            holdSound.stop();
-//            finishSound.stop();
-//            wrongSound.stop();
-//        }
-
-
-//    console.log(star.rotation);
 }
 
 function onClick(){
-//    window.open("https://www.google.com", "_blank");
     window.location.replace("https://games.caramel.be/pinocchio/index.html");
 
 }
